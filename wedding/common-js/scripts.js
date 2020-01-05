@@ -52,10 +52,10 @@ function countdownTime(){
 	if(isExists('#clock')){
 		$('#clock').countdown('2020/02/23', function(event){
 			var $this = $(this).html(event.strftime(''
-				+ '<div class="time-sec"><span class="title">%D</span> days </div>'
-				+ '<div class="time-sec"><span class="title">%H</span> hours </div>'
-				+ '<div class="time-sec"><span class="title">%M</span> minutes </div>'
-				+ '<div class="time-sec"><span class="title">%S</span> seconds </div>'));
+				+ '<div class="time-sec"><span class="title">%D</span> 일 </div>'
+				+ '<div class="time-sec"><span class="title">%H</span> 시간 </div>'
+				+ '<div class="time-sec"><span class="title">%M</span> 분 </div>'
+				+ '<div class="time-sec"><span class="title">%S</span> 초 </div>'));
 		});
 	}
 }
