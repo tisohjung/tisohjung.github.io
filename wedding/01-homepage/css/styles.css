@@ -361,6 +361,10 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 --------------------------------- */
 
 .galery-area .gallery-btn{ margin-top: 30px; }
+.gallery-img { 
+    width: 33%;
+	float: left;
+}
 
 
 
