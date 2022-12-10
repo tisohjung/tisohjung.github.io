@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>김대환 ❤️ 김여름 결혼식에 초대합니다</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="김대환 ❤️ 김여름 결혼식에 초대합니다">
+    <meta property="og:description" content="1월 4일 오후 5시 베릭 가든">
+    <meta property="og:image" content="https://tisohjung.github.io/summer/images/heart.png">
+    <meta property="og:url" content="https://tisohjung.github.io/summer">
+    <meta charset="UTF-8">
+
+    <!-- Font -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Playball%7CBitter" rel="stylesheet"> -->
+    <!-- Stylesheets -->
+    <link href="common-css/bootstrap.css" rel="stylesheet">
+    <link href="common-css/fluidbox.min.css" rel="stylesheet">
+    <link href="common-css/font-icon.css" rel="stylesheet">
+    <link href="01-homepage/css/styles.css" rel="stylesheet">
+    <link href="01-homepage/css/responsive.css" rel="stylesheet">
+    
+    <script src="./common-js/jquery-3.1.1.min.js"></script>
+    <script>
+        
+        function copyToClipboard(text) {
+            var aux = document.createElement("textarea");
+            aux.value = text;
+            document.body.appendChild(aux);
+            aux.select();
+            aux.setSelectionRange(0, 9999);
+            document.execCommand("copy");
+            document.body.removeChild(aux);
+        }
+        
+        function toast(select, msg, timer) {
+            var $elem = $("<p>" + msg + "</p>");
+
+            $(".toast.all").html($elem).show();
+
+            $elem.slideToggle(100, function () {
+                setTimeout(function () {
+                    $elem.fadeOut(function () {
+                        $(this).remove();
+                        $('.toast.all').css('bottom', '');
+                    });
+                }, timer);
+                return false;
+            });
+
+            $('.toast.all').stop().animate({ 'bottom': '5%' });
+        }
+
+
+        $(document).ready(function (e) {     
+            console.log("document ready");
+
+            $('.copy_btn').on('click', function () {
+                var idx = $(this).attr('idx');
+                var account_number = $("#inputAccountNumber_" + idx).text();
+
+                console.log(`clicked ${account_number}`);
+                copyToClipboard(account_number);
+
+                //복사완료 문구
+                toast(this, '복사되었습니다.', 1500);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <section class="section">
+        
+        <!-- <video muted autoplay loop style="width: 100vw;">
+            <source src="images/video.mp4" type="video/mp4">
+            <strong>Your browser does not support the video tag.</strong>
+        </video> -->
+        <div class="hea">
+            <img class="margin-bottom" src="images/header-0.jpeg" alt="Gallery Image"></img>        
+            <img class="margin-bottom" src="images/header-1.jpeg" alt="Gallery Image"></img>
+        </div>
+
+    </section>
+
+    <section class="section galery-area center-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="heading">
+                        <span class="heading-bottom"><i class="icon icon-star"></i></span>
+                    </div>
+                    <div class="col-md-4 gallery-img">
+                        <a href="images/gallery-1.jpeg" data-fluidbox><img class="margin-bottom"
+                                src="images/gallery-1.jpeg" alt="Gallery Image"></a>
+                    </div>
+
+                    <div class="col-md-4 gallery-img">
+                        <a href="images/gallery-2.jpeg" data-fluidbox><img class="margin-bottom"
+                                src="images/gallery-2.jpeg" alt="Gallery Image"></a>
+                    </div>
+
+                    <div class="col-md-4 gallery-img">
+                        <a href="images/gallery-3.jpeg" data-fluidbox><img class="margin-bottom"
+                                src="images/gallery-3.jpeg" alt="Gallery Image"></a>
+                    </div>
+
+                    <div class="col-md-4 gallery-img">
+                        <a href="images/gallery-4.jpeg" data-fluidbox><img class="margin-bottom"
+                                src="images/gallery-4.jpeg" alt="Gallery Image"></a>
+                    </div>
+
+                    <div class="col-md-4 gallery-img">
+                        <a href="images/gallery-5.jpeg" data-fluidbox><img class="margin-bottom"
+                                src="images/gallery-5.jpeg" alt="Gallery Image"></a>
+                    </div>
+
+                    <!-- <div class="col-md-4 gallery-img">
+                        <a href="images/gallery-6.jpeg" data-fluidbox><img class="margin-bottom"
+                                src="images/gallery-6.jpeg" alt="Gallery Image"></a>
+                    </div> -->
+                    <!-- <a class="btn-2 margin-bottom gallery-btn" href="#">VIEW ALL GALLERY</a> -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <!-- <div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="heading">
+                        <h2 class="title"><br>D-Day</h2>
+                        <span class="heading-bottom"><i class="color-white icon icon-star"></i></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+
+                </div>
+
+        </div> -->
+        <img class="margin-bottom"
+                src="images/footer.jpeg" alt="Gallery Image"></img>
+        <br><br><br><br>
+        <div class="container center-text">
+            <div class="heading">
+                <h3 class="title">신랑 & 신부에게 마음 전하기</h3>
+                <h4 class="title" style="color:#999;">축복의 의미로 축의금을 전달해보세요</h4>
+                <br>
+                <div class="account_list">
+                    <dl id="dl_groom_1">
+                        <dt style="line-height: 25px; margin-bottom: 8px;">
+                            <span id="inputGroomSender_1" class="input_groom_sender">신랑&nbsp;&nbsp;계좌&nbsp;&nbsp;&nbsp;</span>
+                            <a href="javascript:;" class="copy_btn groom" idx="1">복사하기</a>
+                        </dt>
+                        <dd>
+                            <span id="inputGroomBank_1" class="input_groom_bank">신한은행</span>&nbsp;&nbsp;(예금주 : <span id="inputGroomAccountHolder_1" class="input_groom_accountholder">김대환</span>)
+                        </dd>
+                        <dd>
+                            <span id="inputAccountNumber_1" class="input_groom_accountnumber">110-212-521256</span>
+                        </dd>
+                    </dl>
+                    <dl id="dl_groom_2">
+                        <dt style="line-height: 25px; margin-bottom: 8px;">
+                            <span id="inputGroomSender_2" class="input_groom_sender">신부</span>&nbsp;&nbsp;계좌&nbsp;&nbsp;&nbsp;
+                            <a href="javascript:;" class="copy_btn groom" idx="2">복사하기</a>
+                        </dt>
+                        <dd>
+                            <span id="inputGroomBank_2" class="input_groom_bank">신한은행</span>&nbsp;&nbsp;(예금주 : <span id="inputGroomAccountHolder_2" class="input_groom_accountholder">김여름</span>)
+                        </dd>
+                        <dd>
+                            <span id="inputAccountNumber_2" class="input_groom_accountnumber">110-252-016662</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <br><br>
+            <p class="copyright">
+                Copyright &copy;<script>
+                    document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i>
+                by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            </p>
+
+        </div><!-- container -->
+    </section>
+
+
+    <!-- 계좌번호 팝업 -->
+    <div class="account_pop account">
+        <div class="layer_pop">
+            <div class="account_list account mCustomScrollbar _mCS_1 mCS_no_scrollbar"><div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: 0px;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr"></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+            <!-- 복사하기 안내문구 -->
+            <div class="toast all"></div>
+        </div>
+        <div class="pop_mask"></div>
+    </div>
+
+
+    <!-- SCIPTS -->
+
+    <script src="common-js/jquery-3.1.1.min.js"></script>
+
+    <script src="common-js/jquery.countdown.min.js"></script>
+
+    <script src="common-js/jquery.fluidbox.min.js"></script>
+
+
+    <script src="common-js/scripts.js"></script>
+    
+</body>
+
+</html>
